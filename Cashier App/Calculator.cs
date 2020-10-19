@@ -19,7 +19,6 @@ namespace Cashier_App
         {
             this.listItem.Add(item);
             this.total += item.getSubtotal();
-            this.subtotal = item.getSubtotal();
         }
 
         public double getTotal() { return total; }
