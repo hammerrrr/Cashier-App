@@ -23,10 +23,30 @@ namespace Cashier_App
             this.type = type;
         }
 
-        public string getTtitle() => title;
-        public int getJumlah() => jumlah;
-        public string getType() => type;
-        public double getPrice() => price;
-        public double getSubtotal() => price * jumlah;
+        public string getTtitle()
+        {
+            return title;
+        }
+
+        public int getJumlah()
+        {
+            return jumlah;
+        }
+
+        public string getType()
+        {
+            return type;
+        }
+
+        public double getPrice()
+        {
+            return price;
+        }
+
+        public double getSubtotal()
+        {
+            subtotal = price * jumlah;
+            return subtotal;
+        }
     }
 }
