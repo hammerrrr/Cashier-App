@@ -20,22 +20,31 @@ namespace Cashier_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Calculator calculator;
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TipeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            calculator = new Calculator();
+            ListBoxItem.ItemsSource = calculator.getListItem();
         }
 
         private void AddButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            string title = NameBox.Text;
+            int jumlah = Convert.ToInt32(QuantityBox.Text);
+            string type = TypeComboBox.Text;
+            double price = Convert.ToDouble(PriceBox.Text);
+
+            Item item = new Item(new Random().Next(), title, jumlah, type, price);
+            calculator.AddItem(item);
+            double total = calculator.getTotal();
+
+            TotalBox.Content = String.Format("RP. {0}", total);
+
+            ListBoxItem.Items.Refresh();
+        }
+
+        private void TipeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
