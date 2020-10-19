@@ -8,6 +8,7 @@ namespace Cashier_App
     {
         private List<Item> listItem;
         private double total = 0;
+        private double subtotal = 0;
 
         public Calculator()
         {
@@ -18,10 +19,10 @@ namespace Cashier_App
         {
             this.listItem.Add(item);
             this.total += item.getSubtotal();
+            this.subtotal = item.getSubtotal();
         }
 
-        public double getTotal() => total;
-
-        public List<Item> getListItem() => listItem;
+        public double getTotal() { return total; }
+        public List<Item> getListItem() { return listItem; }
     }
 }
